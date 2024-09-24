@@ -28,7 +28,7 @@ python setup.py install
 python run_ped_sim.py -h
 ```
 
-# sample run
+# Sample Run
 
 ## Running on simulated families
 
@@ -56,9 +56,13 @@ The final family out put will be by dault labeled as "joint_family.nx" and "join
 
 ## Features
 `-y` Years we want to sample from. 
+
 `-c` File containing the distrubution of children accross generations.
+
 `-o` Output file name. by default the output file will be called "joint_family"
+
 `mf` Main family that is specified by user. Must be a .nx file
+
 `s` Seed
 
 - to run on all founders 
