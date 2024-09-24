@@ -29,26 +29,26 @@ if __name__ == '__main__':
     
     for i in  range(1, u_iterations + 1):
         #create simulated family
-        sim_ped_cmd = f'python fod_wrapper_v8.py -c impumps_nchild_nozero_mean_sd.txt {years_str}'#-s{i}'
+        sim_ped_cmd = f'python fb_wrapper.py -c impumps_nchild_nozero_mean_sd.txt {years_str}'#-s{i}'
         subprocess.run(sim_ped_cmd, shell=True)
 
         #save main family profiles.txt , main family.nx, joint family.nx 
-        new_fod = 'results_fod_wrapper'
-        if not os.path.exists(new_fod):
+        new_fb = 'results_fd_wrapper'
+        if not os.path.exists(new_fb):
             print("creating new folder")
-            os.makedirs(new_fod)
+            os.makedirs(new_fb)
 
         
-        shutil.move('main_family.nx', f'{new_fod}/main_family{i}.nx')
-        shutil.move('main_family_profiles.txt', f'{new_fod}/main_family_profiles{i}.txt')
-        shutil.move('joint_family.nx', f'{new_fod}/joint_family{i}.nx')
+        shutil.move('main_family.nx', f'{new_fb}/main_family{i}.nx')
+        shutil.move('main_family_profiles.txt', f'{new_fb}/main_family_profiles{i}.txt')
+        shutil.move('joint_family.nx', f'{new_fb}/joint_family{i}.nx')
 
-        #run enur_fam on main and joint family. file saved in new_fod
+        #run enur_fam on main and joint family. file saved in new_fb
         print(f'enur main {i}')
-        sim_enur_cmd = f'python enur_fam.py -n {new_fod}/main_family{i}.nx'
+        sim_enur_cmd = f'python enur_fam.py -n {new_fb}/main_family{i}.nx'
         subprocess.run(sim_enur_cmd, shell=True)
         print(f'enur joint {i}')
-        sim_enur_cmd = f'python enur_fam.py -n {new_fod}/joint_family{i}.nx'
+        sim_enur_cmd = f'python enur_fam.py -n {new_fb}/joint_family{i}.nx'
         subprocess.run(sim_enur_cmd, shell=True)
         
 
