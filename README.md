@@ -30,8 +30,6 @@ python run_ped_sim.py -h
 
 # Sample Run
 
-## Running on simulated families
-
 1. To perform the test run first we make sure we activate our conda enviornment
 ```
 conda activate ped_sim
