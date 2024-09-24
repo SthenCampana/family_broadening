@@ -4,7 +4,25 @@ Family_broadening (FB) simulates families on founders to increase the breadth of
 ## Usage
 FB takes in a family pedigree as a networkx directed graph. These files are required to run:
 1. A child distribution file containing the number of expected children for each generation. We provide an example file ("impumps_nchild_nozero_mean_sd.txt") that is based on US census data. This can be edited or replaced to fit the users needs
-2. If the user inputs their own family pedigree, the file needs to be in a .nx file format. The contents should list parent to child relationships for each individual 
+2. If the user inputs their own family pedigree, the file needs to be in a .nx file format. The contents should list parent to child relationships for each individual. The user also need to provide a corrisponding profiles file in a .txt format. The profiles should contain (ID Sex Gen) and list all individuals with their sex and generation year.
+Some examples:
+main_family.nx
+```
+1 3 {}
+1 24 {}
+3 5 {}
+3 8 {}
+......
+```
+main_family_profiles.txt
+```
+ID	Sex	Gen
+1	male	NA
+3	male	1850
+2	female	NA
+5	female	1860
+4	female	1850
+```
 
 ## Install Conda Environment
 You will need to have conda installed on your system. To install conda/mini conda onto your system follow this 
