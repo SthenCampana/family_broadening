@@ -61,7 +61,7 @@ The final family out put will be by dault labeled as "joint_family.nx" and "join
 
 `-o` Output file name. by default the output file will be called "joint_family"
 
-`mf` Main family that is specified by user. Must be a .nx file
+`-mf` Main family that is specified by user. Must be a .nx file
 
-`s` Seed
+`-s` Seed
 
